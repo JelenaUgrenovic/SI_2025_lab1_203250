@@ -80,7 +80,7 @@ class TaskManager {
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        // TODO: Implement filtering logic
+        tasks.sort(Comparator.comparing(Task::getPriority));
     }
 
     // 5. Filter tasks by category
