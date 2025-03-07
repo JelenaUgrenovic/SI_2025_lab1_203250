@@ -62,9 +62,9 @@ class TaskManager {
 
     // MISSING FEATURES:
 
-    // 1. Remove a task by name
+    //1. Remove a task by name
     public void removeTask(String name) {
-        // TODO: Implement removal logic
+        tasks.removeIf(task -> task.getName().equals(name));
     }
 
     // 2. Find all completed tasks
@@ -80,7 +80,7 @@ class TaskManager {
 
     // 4. Sort tasks by priority
     public void sortTasksByPriority() {
-        // TODO: Implement sorting by priority logic
+        tasks.sort(Comparator.comparing(Task::getPriority));
     }
 
     // 5. Filter tasks by category
