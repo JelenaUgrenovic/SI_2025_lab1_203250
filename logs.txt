@@ -1,0 +1,22 @@
+* b1d8f1c Final commit
+*   c807fb3 Merge branch 'master' of https://github.com/JelenaUgrenovic/SI_2025_lab1_203250
+|\  
+| *   e1d7c1a Merge pull request #11 from JelenaUgrenovic/feature/sort-tasks-by-priority
+| |\  
+| | *   16effa6 Resolved merge conflict in sortTasksByPriority
+| | |\  
+| | |/  
+| |/|   
+| * |   9705877 Merge pull request #10 from JelenaUgrenovic/feature/remove-task-by-name
+| |\ \  
+| | * | 1203614 Implemented remove task by name functionality
+| |/ /  
+| | * dec7a8b Implemented sorting tasks by priority
+| |/  
+* / 9783481 Implemented mark tasks as completed by name
+|/  
+* 934bf19 Add starter code
+*   66e1a78 Initial commit
+|\  
+| * 0da396f Initial commit
+* a25dc81 Initial commit
