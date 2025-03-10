@@ -1,0 +1,118 @@
+git --version - Прво ја проверувам верзијата на Git на мојот компјутер со командата git --version. Ова ми помага да се осигурам дека имам инсталирано најново издание на Git.
+
+$ mkdir SI_2025_lab1_203250 - креирам нов фолдер на мојот компјутер каде ќе работам.
+
+$ cd SI_2025_lab1_203250 -  Потоа влегувам во новокреираниот фолдер со командата.
+
+$ git init -  Со командата git init го иницирам Git репозиториумот во овој фолдер. Тоа значи дека го поставувам фолдерот како Git репозиториум, каде што ќе следам промените на проектот.
+
+$ git remote add origin https://github.com/JelenaUgrenovic/SI_2025_lab1_203250.git - Оваа команда ја додава врската (remote) со мојот репозиториум на GitHub. Така, мојот локален репозиториум е поврзан со далечинскиот репозиториум на GitHub и можам да испраќам (push) и влечам (pull) промените.
+
+$ git remote -v - Со командата git remote -v проверувам дали успешно го поврзав мојот локален репозиториум со далечинскиот репозиториум. 
+
+$ touch README.md - Креирам нов фајл со име README.md
+
+$ notepad README.md - Со ова ја отворам датотеката README.md во Notepad и ја уредувам. Во овој случај пишувам име, презиме, број на индекс.
+
+$ git add README.md - Сега го додавам README.md во staging area. Ова ми овозможува да ги запишам овие промени во Git репозиториумот.
+
+$ git commit -m "Initial commit" - Со ова правам commit на моите промени со опис "Initial commit"
+
+$ git push -u origin master - Со ова ја испраќам мојата локална верзија на репозиториумот на GitHub, на главната гранка (master)
+
+$ touch SI2025Lab1Main.java - Креирам нов Java фајл со командата touch SI2025Lab1Main.java. 
+
+$ notepad SI2025Lab1Main.java  -Со ова ја отворам Java датотека и започнувам со додавање на кодот.
+
+$ git add SI2025Lab1Main.java - Ја додавам датотека SI2025Lab1Main.java во staging area, подготвувајќи ја за commit.
+
+$ git commit -m "Add starter code" - Правам commit со опис "Add starter code"
+
+$ git pull origin master - Со ова ја влечам најновата верзија на кодот од главната гранка на GitHub, за да се осигурам дека мојот локален репозиториум е синхронизиран со сите најнови промени.
+
+$ git push origin master - Ги испраќам моите најнови промени на GitHub за главната гранка на репозиториумот.
+
+$ git fetch origin - додадена е нова гранка и ова ја проверува далечинската верзија на репозиториумот за нови гранки и промените што се направени
+ * [new branch]      feature/remove-task-by-name -> origin/feature/remove-task-by-name
+
+$ git fetch origin - додадена е нова гранка и ова ја проверува далечинската верзија на репозиториумот за нови гранки и промените што се направени
+ * [new branch]      feature/sort-tasks-by-priority -> origin/feature/sort-tasks-by-priority
+
+$ git fetch origin - додадена е нова гранка и ова ја проверува далечинската верзија на репозиториумот за нови гранки и промените што се направени
+ * [new branch]      feature/mark-task-as-completed-by-name -> origin/feature/mark-task-as-completed-by-name
+
+$ git checkout feature/remove-task-by-name  - Преминувам на гранката feature/remove-task-by-name
+
+$ notepad SI2025Lab1Main.java - Го отворам фајлот SI2025Lab1Main.java за да го имплементирам делот за отстранување на задача.
+
+$ git add . - Ги додавам сите променети фајлови во staging area за да можам да ги зачувам во репозиториумот со commit.
+
+$ git commit -m "Implemented remove task by name functionality" - Правам commit со опис "Implemented remove task by name functionality"
+
+$ git push origin feature/remove-task-by-name - Ја испраќам новата функционалност на далечинскиот репозиториум.
+
+$ git checkout feature/sort-tasks-by-priority - Сега преминувам на друга гранка feature/sort-tasks-by-priority
+
+$ notepad SI2025Lab1Main.java - Го отворам фајлот SI2025Lab1Main.java за да го имплементирам делот што е потребен.
+
+$ git add . - Ги додавам сите променети фајлови во staging area.
+
+$ git commit -m "Implemented sorting tasks by priority" - Правам commit со опис "Implemented sorting tasks by priority"
+
+$ git push origin feature/sort-tasks-by-priority - Ја испраќам функционалноста на далечинскиот репозиториум.
+
+$ git checkout feature/mark-task-as-completed-by-name - Преминувам на гранката feature/mark-task-as-completed-by-name
+
+$ notepad SI2025Lab1Main.java - Го отворам фајлот SI2025Lab1Main.java за да го имплементирам делот што е потребен.
+
+$ git add . - Ги додавам сите променети фајлови во staging area.
+
+$ git commit -m "Implemented mark tasks as completed by name" - Правам commit со опис "Implemented mark tasks as completed by name"
+
+$ git push origin feature/mark-task-as-completed-by-name - Ја испраќам функционалноста на далечинскиот репозиториум.
+
+- $ notepad SI2025Lab1Main.java - $ git checkout feature/sort-tasks-by-priority - $ notepad SI2025Lab1Main.java - $ git add SI2025Lab1Main.java - $ git commit -m "Resolved merge conflict in sortTasksByPriority" - $ git push origin feature/sort-tasks-by-priority - $ git pull origin master - 
+Проблем:
+Во оцој случај, конфликтирале промените во методот sortTasksByPriority(), каде што една гранка имала имплементација, а другата само TODO (што значи да се имплементира).
+
+Како го решив проблемот:
+Препознавање на конфликтот:
+При обидот за спојување на гранките, Git пријави конфликт во фајлот SI2025Lab1Main.java. Овој конфликт се појави затоа што постоеле различни промени во истиот дел од кодот на двете гранки (гранката feature/sort-tasks-by-priority и master).
+
+Решавање на конфликтот:
+Конфликтот беше решен со прегледување на фајлот SI2025Lab1Main.java и отстранување на конфликтните маркери (<<<<<<<, =======, >>>>>>>). Крајниот код беше:
+
+java
+Copy
+// 4. Sort tasks by priority
+public void sortTasksByPriority() {
+    tasks.sort(Comparator.comparing(Task::getPriority));
+}
+Ова беше финализирано така што од двете страни на конфликтот го задржавме само правилниот код.
+
+Додавanje на промените во Git:
+По решавањето на конфликтот, го додадов фајлот во staging area со git add SI2025Lab1Main.java и направив commit со порака "Resolved merge conflict in sortTasksByPriority".
+
+После решавањето на конфликтот и направениот commit, ги пуштив промените назад на оддалечениот репозиториум користејќи git push origin feature/sort-tasks-by-priority.
+
+Создавање на Pull Request:
+Кога конфликтот беше решен и промените беа пуштени на GitHub, создадов Pull Request од гранката feature/sort-tasks-by-priority кон master.
+
+Заклучок:
+Конфликтот беше решен со внимателно спојување на различните делови на кодот и со осигурување дека на крајот останал само исправниот код. Ова беше направено преку рачно решавање на конфликтите во фајлот и потоа финализирање на промените со commit и push.
+
+$ git checkout master - Преминувам на главната гранка на репозиториумот.
+
+$ git fetch origin - се осигурувам дека сите промени се најнови.
+
+$ git merge feature/mark-task-as-completed-by-name - Ја спојувам гранката за feature/mark-task-as-completed-by-name со главната гранка.
+
+$ git push origin master - Ги испраќам сите промените од главната гранка на GitHub
+
+$ git log --oneline --graph --all > logs.txt - Креирам запис на сите commits и ги запишувам во фајлот logs.txt
+
+$ touch 203250.txt - Креирам нов текстуален фајл за документација на сите чекори
+
+$ notepad 203250.txt- го отварам фајлот
+
+$ git add logs.txt 203250.txt
